@@ -6,12 +6,12 @@ import ArtistList from "../../../components/ArtistList";
 import Heading from "../../../components/Heading";
 import Layout from "../../../components/Layout";
 import PlaylistList from "../../../components/PlaylistList";
-import { useSpotify } from "../../../context/SpotifyContext";
 import { SearchResults, Track } from "../../../types/types";
 import { customGet } from "../../../utils/customGet";
 import { fmtMSS } from "../../../utils/formatDuration";
 import { isAuthenticated } from "../../../utils/isAuthenticated";
 import Image from "next/image";
+import { useSpotify } from "../../../Redux/Spotify/hook";
 
 interface IProps {
   query: string;

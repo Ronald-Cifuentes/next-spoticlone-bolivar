@@ -5,10 +5,10 @@ import CardItem from "../../components/CardItem";
 import CardItemGrid from "../../components/CardItemGrid";
 import Heading from "../../components/Heading";
 import Layout from "../../components/Layout";
-import { useSpotify } from "../../context/SpotifyContext";
 import { PlaylistType } from "../../types/types";
 import { customGet } from "../../utils/customGet";
 import { isAuthenticated } from "../../utils/isAuthenticated";
+import { useSpotify } from "../../Redux/Spotify/hook";
 
 interface IProps {
   likedTracks: PlaylistType;

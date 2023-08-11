@@ -8,9 +8,10 @@ import PlayerTwo from "../components/PlayerTwo";
 import PreviewPlayer from "../components/PreviewPlayer";
 import Sidebar from "../components/Sidebar";
 import PlayerProvider from "../context/PlayerContext";
-import { SpotifyProvider } from "../context/SpotifyContext";
-import "../styles/globals.css";
-import "../styles/nonTailwind.css";
+import "../styles/globals.scss";
+import "../styles/nonTailwind.scss";
+import { Provider } from "react-redux";
+import store from "../Redux/store";
 
 nProgress.configure({
   showSpinner: false,
@@ -40,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <SessionProvider session={pageProps.session}>
-      <SpotifyProvider>
+      <Provider store={store}>
         <PlayerProvider>
           {router.pathname === "/login" ? (
             <Component {...pageProps} />
@@ -57,7 +58,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </>
           )}
         </PlayerProvider>
-      </SpotifyProvider>
+      </Provider>
     </SessionProvider>
   );
 }

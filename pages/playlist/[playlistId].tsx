@@ -4,7 +4,7 @@ import { getSession } from "next-auth/react";
 import { RiMusic2Fill } from "react-icons/ri";
 import Layout from "../../components/Layout";
 import TracksTable from "../../components/TracksTable";
-import styles from "../../styles/Description.module.css";
+import styles from "../../styles/Description.module.scss";
 import { PlaylistType } from "../../types/types";
 import { customGet } from "../../utils/customGet";
 import { isAuthenticated } from "../../utils/isAuthenticated";

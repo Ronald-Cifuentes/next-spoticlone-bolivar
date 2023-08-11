@@ -1,0 +1,80 @@
+$background-color_1: #888988;
+
+@-webkit-keyframes nprogress-spinner {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes nprogress-spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+body {
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $background-color_1;
+		outline: 1px solid slategrey;
+	}
+}
+#sidebar-playlists {
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $background-color_1;
+		outline: 1px solid slategrey;
+	}
+}
+#nprogress {
+	pointer-events: none;
+	.bar {
+		--primary: #1db964;
+		background: var(--primary);
+		position: fixed;
+		z-index: 1031;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+	}
+	.peg {
+		display: block;
+		position: absolute;
+		right: 0px;
+		width: 100px;
+		height: 100%;
+		opacity: 1;
+		-webkit-transform: rotate(3deg) translate(0px, -4px);
+		-ms-transform: rotate(3deg) translate(0px, -4px);
+		transform: rotate(3deg) translate(0px, -4px);
+	}
+}
+.nprogress-custom-parent {
+	overflow: hidden;
+	position: relative;
+	#nprogress {
+		.spinner {
+			position: absolute;
+		}
+		.bar {
+			position: absolute;
+		}
+	}
+}
